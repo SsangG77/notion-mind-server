@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "@notionhq/client": "^2.3.0",
     "axios": "^1.8.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "fs": "^0.0.1-security",
     "ng": "^0.0.0"
   }
 }
