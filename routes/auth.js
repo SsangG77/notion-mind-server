@@ -65,11 +65,11 @@ router.get("/callback", async (req, res) => {
         // console.log("data : ", response.data);
 
 
-        res.redirect(`${APP_SCHEME}result?scuess=${auth_result}&bot_id=${botId}`);
+        res.redirect(`${APP_SCHEME}result?success=${auth_result}&bot_id=${botId}`);
 
     } catch (error) {
         auth_result = true
-        res.redirect(`${APP_SCHEME}result?scuess=${auth_result}&bot_id=${botId}`);
+        res.redirect(`${APP_SCHEME}result?success=${auth_result}&bot_id=${botId}`);
         // res.status(500).json({ error: 'Failed to exchange token', details: error.response.data });
     }
 
