@@ -15,7 +15,7 @@ const dataRouter = require('./routes/data');
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Hello Sangjin');
 });
 
 
@@ -25,14 +25,9 @@ app.use('/data', dataRouter);
 
 
 
-// app.get('/notion/token', (req, res) => {
-//     if (!accessToken) {
-//         return res.status(400).json({ error: 'No access token available' });
-//     }
-//     res.json({ access_token: accessToken });
-// });
 
-app.listen(3000, () => {
+app.listen(3000, '0.0.0.0', () => {
     console.log("==========================================================================================================================================================================================")
     console.log('Server running on port 3000');
-});
+  });
+  

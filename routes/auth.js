@@ -25,7 +25,7 @@ let auth_result = null;
 
 
 router.get("/notion", (req, res) => {
-    const notionAuthUrl = `https://api.notion.com/v1/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}/callback&response_type=code&owner=user`;
+    const notionAuthUrl = `https://api.notion.com/v1/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&owner=user`;
     res.redirect(notionAuthUrl);
 });
 
@@ -43,7 +43,7 @@ router.get("/callback", async (req, res) => {
         const response = await axios.post('https://api.notion.com/v1/oauth/token', {
             grant_type: 'authorization_code',
             code: code,
-            redirect_uri: REDIRECT_URI+ "/callback"
+            redirect_uri: REDIRECT_URI
         }, {
             headers: {
                 'Authorization': 'Basic ' + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64'),
